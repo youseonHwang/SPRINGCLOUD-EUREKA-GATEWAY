@@ -4,4 +4,8 @@ spring:
       uri: http://localhost:8888
       name: user-service
 
-      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
