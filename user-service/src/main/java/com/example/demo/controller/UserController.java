@@ -17,4 +17,9 @@ public class UserController {
     public String auth(@RequestHeader(value = "token") String token) {
         return "token is " + token;
     }
+	@GetMapping("/config")
+    public String string(@Value("${message.owner}") String messageOwner,
+                         @Value("${message.content}") String messageContent) {
+        return "Configuration File's Message Owner: " + messageOwner + "\n"+ "Configuration File's Message Content: " + messageContent;
+    }
 }
